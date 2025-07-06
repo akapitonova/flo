@@ -1,3 +1,0 @@
-"USERID";"USERNAME";"PASSWORD";"ROLE";"PROP"
-11;"admin";"admin123";"ADMIN";{"firstName": "admin","lastName": "admin","customerPhone": "+79991112233","shippingAddress": "City Street ect","balance": 2000,"discount": 3}
-12;"user";"54321";"USER";{"firstName": "user","lastName": "user","customerPhone": "+79991112233","shippingAddress": "City Street ect","balance": 2000,"discount": 3}
