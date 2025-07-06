@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!--PRODUCT-->
+    <changeSet id="loadProductData" author="floflo" context="dml">
+        <loadData
+                file="data/products.csv"
+                tableName="PRODUCT"
+        relativeToChangelogFile="true">
+        </loadData>
+        <rollback>
+            <empty tableName="PRODUCT" />
+        </rollback>
+        <comment>
+            Заполнение таблицы PRODUCT
+        </comment>
+    </changeSet>
+
+    <!--USERS-->
+    <changeSet id="loadUserData" author="floflo" context="dml">
+        <loadData
+                file="data/users.csv"
+                tableName="USERS"
+                separator=";"
+                relativeToChangelogFile="true">
+        </loadData>
+        <rollback>
+            <empty tableName="USERS" />
+        </rollback>
+        <comment>
+            Заполнение таблицы USERS
+        </comment>
+    </changeSet>
+</databaseChangeLog>

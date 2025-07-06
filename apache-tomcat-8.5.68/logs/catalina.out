@@ -1,0 +1,43 @@
+20-Jun-2021 02:33:01.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.68
+20-Jun-2021 02:33:01.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 11 2021 13:32:01 UTC
+20-Jun-2021 02:33:01.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.68.0
+20-Jun-2021 02:33:01.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+20-Jun-2021 02:33:01.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             10.16
+20-Jun-2021 02:33:01.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           x86_64
+20-Jun-2021 02:33:01.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+20-Jun-2021 02:33:01.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            1.8.0_291-b10
+20-Jun-2021 02:33:01.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+20-Jun-2021 02:33:01.239 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68
+20-Jun-2021 02:33:01.239 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68
+20-Jun-2021 02:33:01.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/conf/logging.properties
+20-Jun-2021 02:33:01.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Jun-2021 02:33:01.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Jun-2021 02:33:01.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Jun-2021 02:33:01.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Jun-2021 02:33:01.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+20-Jun-2021 02:33:01.242 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68
+20-Jun-2021 02:33:01.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68
+20-Jun-2021 02:33:01.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/temp
+20-Jun-2021 02:33:01.243 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/nana/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+20-Jun-2021 02:33:01.826 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Jun-2021 02:33:01.858 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+20-Jun-2021 02:33:01.874 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1487 ms
+20-Jun-2021 02:33:02.007 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+20-Jun-2021 02:33:02.008 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.68]
+20-Jun-2021 02:33:02.018 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/docs]
+20-Jun-2021 02:33:02.284 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/docs] has finished in [264] ms
+20-Jun-2021 02:33:02.284 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/manager]
+20-Jun-2021 02:33:02.319 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/manager] has finished in [35] ms
+20-Jun-2021 02:33:02.319 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/examples]
+20-Jun-2021 02:33:02.589 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/examples] has finished in [270] ms
+20-Jun-2021 02:33:02.589 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/ROOT]
+20-Jun-2021 02:33:02.607 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/ROOT] has finished in [18] ms
+20-Jun-2021 02:33:02.607 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/host-manager]
+20-Jun-2021 02:33:02.628 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/nana/IdeaProjects/ak/ee_kapitonova/apache-tomcat-8.5.68/webapps/host-manager] has finished in [21] ms
+20-Jun-2021 02:33:02.631 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Jun-2021 02:33:02.642 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 767 ms
+20-Jun-2021 02:33:41.831 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Jun-2021 02:33:41.832 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Jun-2021 02:33:41.841 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+20-Jun-2021 02:33:41.866 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Jun-2021 02:33:41.870 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

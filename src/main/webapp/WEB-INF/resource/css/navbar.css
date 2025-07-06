@@ -1,0 +1,28 @@
+.navbar {
+    display: -webkit-flex;
+    display: flex;
+}
+
+#myNavbar {
+    display: -webkit-flex;
+    display: flex;
+    padding-top: 25px;
+    padding-left: 10px;
+}
+
+.nav-item {
+    flex: 1 1 auto;
+    margin: 5px;
+}
+
+.search-input {
+    width: 230px;
+}
+
+.range {
+    width: 50px;
+}
+
+.qty-input {
+    width: 50px;
+}

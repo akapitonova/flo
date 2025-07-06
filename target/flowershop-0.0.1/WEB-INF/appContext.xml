@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/data/jpa
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="com.kap" />
+    <context:property-placeholder location="classpath:database.properties"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!--изначально было подключение к бд h2-->
+        <!--<property name="driverClassName" value="org.h2.Driver" />
+        <property name="url" value="jdbc:h2:~/flowershop" />
+        <property name="username" value="sa" />
+        <property name="password" value="123123" />-->
+        <property name="driverClassName" value="${database.driverClassName}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="JpaPersistenceUnit" />
+        <property name="dataSource" ref="dataSource" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <property name="packagesToScan" value="com.kap.flowershop.back.entity"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.ddl_auto">none</prop>
+                <prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+            </props>
+        </property>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <jpa:repositories base-package="com.kap.flowershop.back.repository"/>
+
+    <bean id="LiquibaseManager" class="liquibase.integration.spring.SpringLiquibase">
+        <property name="dataSource" ref="dataSource" />
+        <property name="changeLog" value="classpath:db/changelog/root-changelog.xml" />
+    </bean>
+
+    <bean id="StockWebService" class="com.kap.flowershop.front.ws.StockWebServiceImpl"/>
+    <jaxws:endpoint id="StockWebService1" implementor="#StockWebService"
+                    address="/StockWebService"/>
+
+    <context:property-placeholder location="classpath:conf.properties"/>
+    <bean id="userMarshallingService" class="com.kap.flowershop.back.service.UserMarshallingService"/>
+
+    <jee:jndi-lookup id="connectionFactory" jndi-name="jms/connectionFactory"/>
+    <jee:jndi-lookup id="inQueue" jndi-name="jms/inQueue"/>
+    <jee:jndi-lookup id="outQueue" jndi-name="jms/outQueue"/>
+
+</beans>

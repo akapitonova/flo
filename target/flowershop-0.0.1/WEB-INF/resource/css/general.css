@@ -1,0 +1,55 @@
+ .u-section-1 {
+  background-image: url(../static/homepage/three-flowers-spring.jpg);
+  background-position: 50% 100%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 610px;
+}
+
+.u-section-1 .u-text-1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 248px auto 0;
+}
+
+.u-section-1 .u-link-1 {
+  border-style: solid;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 30px auto 60px 523px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-link-1 {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 991px) {
+   .u-section-1 {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 767px) {
+   .u-section-1 {
+    background-position: 100% 50%;
+  }
+
+  .u-section-1 .u-sheet-1 {
+    min-height: 594px;
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-1 {
+    background-position: 69.62% 50%;
+    background-size: auto 155%;
+  }
+
+  .u-section-1 .u-sheet-1 {
+    min-height: 498px;
+  }
+}

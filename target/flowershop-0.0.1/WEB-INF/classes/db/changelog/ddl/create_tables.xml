@@ -1,0 +1,88 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        logicalFilePath="create_tables.xml"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="SEQUENCES" author="floflo" context="ddl" runOnChange="true">
+        <sql>
+            CREATE SEQUENCE IF NOT EXISTS user_sequence;
+            CREATE SEQUENCE IF NOT EXISTS order_item_sequence;
+        </sql>
+        <rollback>
+            DROP SEQUENCE IF EXISTS user_sequence;
+            DROP SEQUENCE IF EXISTS order_item_sequence;
+        </rollback>
+        <comment>
+            Создание перечислений для таблиц
+        </comment>
+    </changeSet>
+    <changeSet id="USERS" author="floflo" context="ddl" runOnChange="true">
+        <sql>
+            CREATE TABLE IF NOT EXISTS USERS(USERID INT NOT NULL PRIMARY KEY,
+            USERNAME VARCHAR(255),
+            PASSWORD VARCHAR(255),
+            ROLE VARCHAR(255),
+            PROP JSONB
+            );
+        </sql>
+        <rollback>
+            DROP TABLE IF EXISTS USERS;
+        </rollback>
+        <comment>
+            Создание таблицы USERS
+        </comment>
+    </changeSet>
+    <changeSet id="CUSTOMERORDER" author="floflo" context="ddl" runOnChange="true">
+        <sql>
+            CREATE TABLE IF NOT EXISTS CUSTOMERORDER(CUSTOMERORDERID VARCHAR(255) NOT NULL PRIMARY KEY,
+            STATUS VARCHAR(255),
+            TOTAL NUMERIC,
+            USERID INT,
+            OPENDATE DATE,
+            CLOSEDATE DATE,
+            CONSTRAINT FKUSERID FOREIGN KEY(USERID) REFERENCES USERS(USERID)
+            );
+        </sql>
+        <rollback>
+            DROP TABLE IF EXISTS CUSTOMERORDER;
+        </rollback>
+        <comment>
+            Создание таблицы CUSTOMERORDER
+        </comment>
+    </changeSet>
+    <changeSet id="ORDERITEM" author="floflo" context="ddl" runOnChange="true">
+        <sql>
+            CREATE TABLE IF NOT EXISTS ORDERITEM(ORDERITEMID INT NOT NULL PRIMARY KEY,
+            QUANTITY INT,
+            PRICE NUMERIC,
+            PRODUCTID VARCHAR(255),
+            PRODUCTNAME VARCHAR(255),
+            CUSTOMERORDERID VARCHAR(255),
+            CONSTRAINT FKCUSTOMERORDERID FOREIGN KEY(CUSTOMERORDERID) REFERENCES CUSTOMERORDER(CUSTOMERORDERID)
+            );
+        </sql>
+        <rollback>
+            DROP TABLE IF EXISTS ORDERITEM;
+        </rollback>
+        <comment>
+            Создание таблицы ORDERITEM
+        </comment>
+    </changeSet>
+    <changeSet id="PRODUCT" author="floflo" context="ddl" runOnChange="true">
+        <sql>
+            CREATE TABLE IF NOT EXISTS PRODUCT(PRODUCTID VARCHAR(255) PRIMARY KEY,
+            NAME VARCHAR(255),
+            PHOTO VARCHAR(255),
+            PRICE NUMERIC,
+            STOREQTY INT
+            );
+        </sql>
+        <rollback>
+            DROP TABLE IF EXISTS PRODUCT;
+        </rollback>
+        <comment>
+            Создание таблицы PRODUCT
+        </comment>
+    </changeSet>
+</databaseChangeLog>
